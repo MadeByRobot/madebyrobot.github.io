@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+    <!-- Background Elements -->
+    <circle cx="250" cy="250" r="200" fill="#f5f7fa" opacity="0.3"/>
+    <circle cx="250" cy="250" r="150" fill="#e4e8f0" opacity="0.5"/>
+
+    <!-- Circuit Board Patterns -->
+    <path d="M100,250 L150,250 L150,200 L200,200 L200,150" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+    <path d="M400,250 L350,250 L350,200 L300,200 L300,150" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+    <path d="M250,400 L250,350 L300,350 L300,300" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+    <path d="M250,100 L250,150 L200,150 L200,200" fill="none" stroke="#e0e0e0" stroke-width="2"/>
+
+    <!-- Circuit Nodes -->
+    <circle cx="150" cy="250" r="4" fill="#6c63ff"/>
+    <circle cx="150" cy="200" r="4" fill="#6c63ff"/>
+    <circle cx="200" cy="200" r="4" fill="#6c63ff"/>
+    <circle cx="200" cy="150" r="4" fill="#6c63ff"/>
+    <circle cx="350" cy="250" r="4" fill="#6c63ff"/>
+    <circle cx="350" cy="200" r="4" fill="#6c63ff"/>
+    <circle cx="300" cy="200" r="4" fill="#6c63ff"/>
+    <circle cx="300" cy="150" r="4" fill="#6c63ff"/>
+    <circle cx="250" cy="350" r="4" fill="#6c63ff"/>
+    <circle cx="300" cy="350" r="4" fill="#6c63ff"/>
+    <circle cx="300" cy="300" r="4" fill="#6c63ff"/>
+    <circle cx="250" cy="150" r="4" fill="#6c63ff"/>
+    <circle cx="200" cy="150" r="4" fill="#6c63ff"/>
+    <circle cx="200" cy="200" r="4" fill="#6c63ff"/>
+
+    <!-- Robot Head - More sleek and modern -->
+    <path d="M180,120 C180,110 190,100 200,100 L300,100 C310,100 320,110 320,120 L320,220 C320,240 300,260 280,260 L220,260 C200,260 180,240 180,220 Z" fill="#6c63ff" stroke="#4a45b1" stroke-width="2"/>
+
+    <!-- Robot Face - More minimalist and sophisticated -->
+    <rect x="210" y="140" width="30" height="10" rx="5" ry="5" fill="#4a45b1"/>
+    <rect x="260" y="140" width="30" height="10" rx="5" ry="5" fill="#4a45b1"/>
+
+    <!-- Subtle Mouth -->
+    <path d="M230,190 Q250,200 270,190" fill="none" stroke="#4a45b1" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Sleek Antenna -->
+    <path d="M250,100 L250,80 C250,70 260,70 260,60" fill="none" stroke="#4a45b1" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="260" cy="60" r="5" fill="#6c63ff"/>
+
+    <!-- Tech Details on Head -->
+    <path d="M180,140 L200,140" stroke="#4a45b1" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M300,140 L320,140" stroke="#4a45b1" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M180,180 L200,180" stroke="#4a45b1" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M300,180 L320,180" stroke="#4a45b1" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M180,220 L200,220" stroke="#4a45b1" stroke-width="1" stroke-dasharray="2,2"/>
+    <path d="M300,220 L320,220" stroke="#4a45b1" stroke-width="1" stroke-dasharray="2,2"/>
+
+    <!-- Robot Neck -->
+    <path d="M230,260 L230,280 L270,280 L270,260" fill="#4a45b1" stroke="none"/>
+
+    <!-- Robot Body - More elegant and futuristic -->
+    <path d="M200,280 C180,280 170,290 170,310 L170,380 C170,400 190,420 210,420 L290,420 C310,420 330,400 330,380 L330,310 C330,290 320,280 300,280 Z" fill="#6c63ff" stroke="#4a45b1" stroke-width="2"/>
+
+    <!-- Chest Details -->
+    <rect x="220" y="300" width="60" height="40" rx="5" ry="5" fill="#4a45b1" opacity="0.7"/>
+    <circle cx="250" cy="320" r="15" fill="#6c63ff"/>
+    <circle cx="250" cy="320" r="10" fill="#4a45b1"/>
+    <circle cx="250" cy="320" r="5" fill="#ffffff" opacity="0.8"/>
+
+    <!-- Subtle Body Details -->
+    <line x1="200" y1="350" x2="300" y2="350" stroke="#4a45b1" stroke-width="1" stroke-dasharray="5,3"/>
+    <line x1="200" y1="370" x2="300" y2="370" stroke="#4a45b1" stroke-width="1" stroke-dasharray="5,3"/>
+    <line x1="200" y1="390" x2="300" y2="390" stroke="#4a45b1" stroke-width="1" stroke-dasharray="5,3"/>
+
+    <!-- Sleek Arms -->
+    <path d="M170,320 C150,320 130,330 120,350 C110,370 120,390 140,395" fill="none" stroke="#4a45b1" stroke-width="4" stroke-linecap="round"/>
+    <path d="M330,320 C350,320 370,330 380,350 C390,370 380,390 360,395" fill="none" stroke="#4a45b1" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Hands -->
+    <circle cx="140" cy="395" r="8" fill="#6c63ff" stroke="#4a45b1" stroke-width="1"/>
+    <circle cx="360" cy="395" r="8" fill="#6c63ff" stroke="#4a45b1" stroke-width="1"/>
+
+    <!-- Digital Particles -->
+    <circle cx="120" cy="300" r="2" fill="#6c63ff" opacity="0.7"/>
+    <circle cx="130" cy="280" r="2" fill="#6c63ff" opacity="0.7"/>
+    <circle cx="150" cy="270" r="2" fill="#6c63ff" opacity="0.7"/>
+    <circle cx="380" cy="300" r="2" fill="#6c63ff" opacity="0.7"/>
+    <circle cx="370" cy="280" r="2" fill="#6c63ff" opacity="0.7"/>
+    <circle cx="350" cy="270" r="2" fill="#6c63ff" opacity="0.7"/>
+
+    <!-- Binary Code - Subtle -->
+    <text x="100" y="150" font-family="monospace" font-size="8" fill="#e0e0e0" opacity="0.5">10110101</text>
+    <text x="350" y="150" font-family="monospace" font-size="8" fill="#e0e0e0" opacity="0.5">01001010</text>
+    <text x="100" y="350" font-family="monospace" font-size="8" fill="#e0e0e0" opacity="0.5">11001100</text>
+    <text x="350" y="350" font-family="monospace" font-size="8" fill="#e0e0e0" opacity="0.5">10101010</text>
+
+    <!-- Glow Effect -->
+    <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Apply subtle glow to key elements -->
+    <g filter="url(#glow)">
+        <circle cx="250" cy="320" r="3" fill="#ffffff" opacity="0.9"/>
+        <circle cx="260" cy="60" r="2" fill="#ffffff" opacity="0.9"/>
+    </g>
+</svg> 
