@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+    <!-- Gradient Background -->
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f9f9f9" />
+            <stop offset="100%" stop-color="#f0f0f0" />
+        </linearGradient>
+        <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#6c63ff" stop-opacity="0.2" />
+            <stop offset="100%" stop-color="#4a45b1" stop-opacity="0.6" />
+        </linearGradient>
+        <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#f0f0f0" />
+        </linearGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+    </defs>
+    <rect width="400" height="300" fill="url(#bgGradient)"/>
+
+    <!-- Subtle Grid Pattern -->
+    <path d="M0,50 L400,50 M0,100 L400,100 M0,150 L400,150 M0,200 L400,200 M0,250 L400,250" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="2,8"/>
+    <path d="M50,0 L50,300 M100,0 L100,300 M150,0 L150,300 M200,0 L200,300 M250,0 L250,300 M300,0 L300,300 M350,0 L350,300" stroke="#e0e0e0" stroke-width="0.5" stroke-dasharray="2,8"/>
+
+    <!-- Game Screen -->
+    <rect x="120" y="50" width="160" height="200" rx="8" ry="8" fill="#ffffff" stroke="#e4e8f0" stroke-width="2"/>
+
+    <!-- Game Background - Sky -->
+    <rect x="130" y="60" width="140" height="180" rx="4" ry="4" fill="url(#skyGradient)"/>
+
+    <!-- Moon -->
+    <circle cx="200" cy="100" r="20" fill="url(#moonGradient)" filter="url(#glow)"/>
+    <circle cx="190" cy="95" r="5" fill="#e0e0e0" opacity="0.7"/>
+    <circle cx="210" cy="105" r="3" fill="#e0e0e0" opacity="0.7"/>
+    <circle cx="195" cy="110" r="4" fill="#e0e0e0" opacity="0.7"/>
+
+    <!-- Stars -->
+    <circle cx="150" cy="80" r="1" fill="white" opacity="0.8"/>
+    <circle cx="170" cy="70" r="1" fill="white" opacity="0.8"/>
+    <circle cx="230" cy="75" r="1" fill="white" opacity="0.8"/>
+    <circle cx="250" cy="90" r="1" fill="white" opacity="0.8"/>
+    <circle cx="140" cy="110" r="1" fill="white" opacity="0.8"/>
+    <circle cx="260" cy="120" r="1" fill="white" opacity="0.8"/>
+
+    <!-- Game Platforms -->
+    <rect x="140" y="150" width="40" height="5" rx="2" ry="2" fill="#ffffff" opacity="0.9"/>
+    <rect x="190" y="180" width="40" height="5" rx="2" ry="2" fill="#ffffff" opacity="0.9"/>
+    <rect x="220" y="130" width="40" height="5" rx="2" ry="2" fill="#ffffff" opacity="0.9"/>
+
+    <!-- Character -->
+    <g filter="url(#glow)">
+        <circle cx="160" cy="140" r="8" fill="#6c63ff"/>
+        <path d="M155,140 L165,140" stroke="white" stroke-width="1" stroke-linecap="round"/>
+        <path d="M160,135 L160,145" stroke="white" stroke-width="1" stroke-linecap="round"/>
+    </g>
+
+    <!-- Jump Path -->
+    <path d="M160,140 Q180,110 200,170" stroke="#6c63ff" stroke-width="1" stroke-dasharray="2,2" opacity="0.7" fill="none"/>
+
+    <!-- Score and UI Elements -->
+    <rect x="140" y="70" width="40" height="15" rx="7.5" ry="7.5" fill="white" opacity="0.3"/>
+    <text x="150" y="82" font-family="Arial" font-size="10" fill="white">1250</text>
+
+    <!-- Game Controls Indicator -->
+    <circle cx="200" cy="230" r="10" fill="white" opacity="0.3"/>
+    <text x="197" y="234" font-family="Arial" font-size="12" fill="#6c63ff">↑</text>
+
+    <!-- AI Elements -->
+    <circle cx="80" cy="120" r="5" fill="#6c63ff" opacity="0.2"/>
+    <circle cx="80" cy="140" r="5" fill="#6c63ff" opacity="0.2"/>
+    <circle cx="80" cy="160" r="5" fill="#6c63ff" opacity="0.2"/>
+
+    <circle cx="320" cy="120" r="5" fill="#6c63ff" opacity="0.2"/>
+    <circle cx="320" cy="140" r="5" fill="#6c63ff" opacity="0.2"/>
+    <circle cx="320" cy="160" r="5" fill="#6c63ff" opacity="0.2"/>
+
+    <!-- Connection Lines -->
+    <path d="M80,120 L130,60 M80,140 L130,60 M80,160 L130,60" stroke="#6c63ff" stroke-width="0.5" opacity="0.2"/>
+    <path d="M320,120 L270,60 M320,140 L270,60 M320,160 L270,60" stroke="#6c63ff" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Game Title -->
+    <text x="180" y="40" font-family="Arial" font-weight="bold" font-size="12" fill="#6c63ff">LINE JUMP</text>
+</svg> 

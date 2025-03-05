@@ -305,11 +305,27 @@ nav ul li a:hover::after {
 
 .product-info {
     padding: 1.5rem;
+    flex: 1;
+}
+
+.product-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.product-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin-right: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .product-info h3 {
-    font-size: 1.5rem;
+    color: #333;
     margin-bottom: 0.5rem;
+    font-size: 1.5rem;
 }
 
 .product-stats {
@@ -318,6 +334,30 @@ nav ul li a:hover::after {
     margin: 1rem 0;
     color: var(--text-light);
     font-size: 0.9rem;
+}
+
+/* Product Features */
+.product-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.feature span {
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
 
 /* Process Section */
@@ -480,6 +520,14 @@ footer {
     nav ul {
         display: none;
     }
+
+    .product-card {
+        grid-template-columns: 1fr;
+    }
+
+    .product-features {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Animations */
@@ -585,4 +633,20 @@ footer {
     nav ul.show li {
         margin: 0.5rem 2rem;
     }
+}
+
+/* Update product card for single product display */
+.product-grid {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.product-card {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+.product-image {
+    height: auto;
 }
