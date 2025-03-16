@@ -114,98 +114,51 @@ function initAppCards() {
  * @param {Element} [container] - Optional container element for this app card
  */
 function fetchAppStoreData(appId, container = null) {
-  const lookupUrl = `https://itunes.apple.com/lookup?id=${appId}`;
+  // Use a CORS proxy by default since we know direct access is blocked
+  const corsProxyUrl = 'https://api.allorigins.win/get?url=';
+  const targetUrl = encodeURIComponent(`https://itunes.apple.com/lookup?id=${appId}`);
+  const proxyUrl = `${corsProxyUrl}${targetUrl}`;
   
-  // Try the direct fetch first
-  fetch(lookupUrl)
+  fetch(proxyUrl)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();
     })
-    .then(data => {
+    .then(response => {
+      // allorigins returns the data in a 'contents' property as a string
+      const data = JSON.parse(response.contents);
       if (data.results && data.results.length > 0) {
         // Get the app data directly since we're using the exact ID
         const app = data.results[0];
         updateAppStats(app, container);
       } else {
         console.log('App data not found for the provided ID');
-        // If no results, fall back to JSONP
-        fetchAppDataWithJSONP(appId, container);
-      }
-    })
-    .catch(error => {
-      console.error('Error fetching App Store data:', error);
-      // If fetch fails (likely due to CORS), try JSONP as fallback
-      fetchAppDataWithJSONP(appId, container);
-    });
-}
-
-/**
- * Fallback method to fetch app data using JSONP approach which avoids CORS issues
- * @param {string} appId - The Apple App Store ID
- * @param {Element} [container] - Optional container element for this app card
- */
-function fetchAppDataWithJSONP(appId, container = null) {
-  const callbackName = 'appStoreCallback_' + appId;
-  
-  // Create a global callback function
-  window[callbackName] = function(data) {
-    if (data.results && data.results.length > 0) {
-      updateAppStats(data.results[0], container);
-    } else {
-      // If JSONP also fails, try a third fallback approach
-      fetchWithCorsProxy(appId, container);
-    }
-    // Clean up - remove script and global callback
-    document.body.removeChild(script);
-    delete window[callbackName];
-  };
-  
-  // Create a script element to fetch data
-  const script = document.createElement('script');
-  script.src = `https://itunes.apple.com/lookup?id=${appId}&callback=${callbackName}`;
-  document.body.appendChild(script);
-  
-  // Set a timeout to handle cases where the API doesn't respond
-  setTimeout(() => {
-    if (window[callbackName]) {
-      console.log('iTunes API JSONP request timed out');
-      document.body.removeChild(script);
-      delete window[callbackName];
-      // Try the proxy fallback
-      fetchWithCorsProxy(appId, container);
-    }
-  }, 5000);
-}
-
-/**
- * Last resort fallback using a CORS proxy
- * Use this only if direct fetch and JSONP both fail
- * @param {string} appId - The Apple App Store ID
- * @param {Element} [container] - Optional container element for this app card
- */
-function fetchWithCorsProxy(appId, container = null) {
-  // Use a public CORS proxy (for demo purposes - consider using your own for production)
-  const corsProxyUrl = 'https://corsproxy.io/?';
-  const targetUrl = encodeURIComponent(`https://itunes.apple.com/lookup?id=${appId}`);
-  
-  fetch(`${corsProxyUrl}${targetUrl}`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.results && data.results.length > 0) {
-        updateAppStats(data.results[0], container);
-      } else {
-        console.log('Final fallback failed - hiding stats');
-        // If all methods fail, hide the stats
+        // If no results, hide the stats
         hideAppStats(container);
       }
     })
     .catch(error => {
-      console.error('Error with CORS proxy approach:', error);
-      // All methods failed, hide the stats
-      hideAppStats(container);
+      console.error('Error fetching App Store data:', error);
+      // Try alternative CORS proxy
+      const fallbackProxyUrl = 'https://corsproxy.io/?';
+      const fallbackUrl = `${fallbackProxyUrl}${targetUrl}`;
+      
+      fetch(fallbackUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (data.results && data.results.length > 0) {
+            updateAppStats(data.results[0], container);
+          } else {
+            console.log('App data not found with fallback proxy');
+            hideAppStats(container);
+          }
+        })
+        .catch(err => {
+          console.error('All fetch attempts failed:', err);
+          hideAppStats(container);
+        });
     });
 }
 
