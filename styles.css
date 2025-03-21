@@ -650,3 +650,61 @@ footer {
 .product-image {
     height: auto;
 }
+
+/* Join Section */
+.join {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    text-align: center;
+}
+
+.join-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.join-text {
+    margin-bottom: 3rem;
+}
+
+.join-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.join-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.benefit {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.benefit:hover {
+    transform: translateY(-10px);
+}
+
+.benefit i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit p {
+    color: var(--text-light);
+}
+
+.join .btn {
+    margin-top: 1rem;
+}
